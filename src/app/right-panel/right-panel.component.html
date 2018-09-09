@@ -1,0 +1,10 @@
+<div class="row m-2 border border-muted">
+  <div class="col">
+    <app-table *ngIf="!editIncome" [type]="'Income'" [data]="incomeData"></app-table>
+    <app-form *ngIf="editIncome" [type]="'Income'" [data]="incomeData"></app-form>
+  </div>
+  <div class="col">
+    <app-table *ngIf="!editExpence" [type]="'Expence'" [data]="expencesData"></app-table>
+    <app-form *ngIf="editExpence" [type]="'Expence'" [data]="expencesData"></app-form>
+  </div>
+</div>

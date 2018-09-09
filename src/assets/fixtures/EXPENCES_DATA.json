@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "transactionType": "Bank Transfer",
+        "transactionId": "001003",
+        "transactionDate": "9/1/2018",
+        "amount":"Rs. 2,00,000"
+    },
+    {
+        "id": 2,
+        "transactionType": "Purchase of Cement",
+        "transactionId": "1110222012112",
+        "transactionDate": "2/1/2018",
+        "amount":"Rs. 2,00,000"
+    },
+    {
+        "id": 3,
+        "transactionType": "labor charges",
+        "transactionId": "990111090",
+        "transactionDate": "4/1/2018",
+        "amount":"Rs. 1,00,000"
+    },
+    {
+        "id": 4,
+        "transactionType": "Purchase of Steel",
+        "transactionId": "001004",
+        "transactionDate": "19/1/2018",
+        "amount":"Rs. 1,00,000"
+    },
+    {
+        "id": 5,
+        "transactionType": "Purchase of Bricks",
+        "transactionId": "001005",
+        "transactionDate": "18/1/2018",
+        "amount":"Rs. 2,00,000"
+    }
+]

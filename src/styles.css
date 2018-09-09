@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~font-awesome/css/font-awesome.css';
+
+html, body{
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.mat-drawer:not(.mat-drawer-side){
+    width:215px;
+}
+.btn{
+    border-radius: 0;
+}
+.btn:focus{
+    box-shadow: none;
+}

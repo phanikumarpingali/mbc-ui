@@ -1,0 +1,32 @@
+[
+    {
+        "clientId": 1,
+        "clientName": "client 1",
+        "clientDescription": "This is a sample client",
+        "clientMetadata": []
+    },
+    {
+        "clientId": 2,
+        "clientName": "client 2",
+        "clientDescription": "This is a sample client",
+        "clientMetadata": []
+    },
+    {
+        "clientId": 3,
+        "clientName": "client 3",
+        "clientDescription": "This is a sample client",
+        "clientMetadata": []
+    },
+    {
+        "clientId": 4,
+        "clientName": "client 4",
+        "clientDescription": "This is a sample client",
+        "clientMetadata": []
+    },
+    {
+        "clientId": 5,
+        "clientName": "client 5",
+        "clientDescription": "This is a sample client",
+        "clientMetadata": []
+    }
+]
