@@ -1,6 +1,6 @@
 'use strict';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -12,6 +12,9 @@ export class LeftPanelComponent implements OnInit {
 
   constructor(private httpService: HttpService) { }
   clientLists: Object[];
+  clientDataDetails: Object;
+  @Output()
+  setClientData: EventEmitter<Object> = new EventEmitter<Object>();
 
   ngOnInit() {
     this.getClientList();
@@ -20,6 +23,15 @@ export class LeftPanelComponent implements OnInit {
   getClientList() {
     this.httpService.getClientList().subscribe((data) => {
       this.clientLists = data;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getClientDetails(clientData) {
+    this.httpService.getClientData(clientData).subscribe((data) => {
+      this.clientDataDetails = data;
+      this.setClientData.emit(this.clientDataDetails);
     }, error => {
       console.log(error);
     });

@@ -7,3 +7,11 @@
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+.mbc-ui-left-panel .list-group-item:hover,
+.mbc-ui-left-panel .list-group-item:active,
+.mbc-ui-left-panel .list-group-item:focus
+{
+    background: #c4c4c4;
+    columns: #000000;
+    cursor: pointer;
+}

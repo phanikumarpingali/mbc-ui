@@ -6,36 +6,16 @@ import { HttpService } from '../http.service';
   templateUrl: './right-panel.component.html',
   styleUrls: ['./right-panel.component.css']
 })
-export class RightPanelComponent implements OnInit {
+export class RightPanelComponent {
 
   constructor(private httpService: HttpService) { }
 
   @Input()
   editIncome;
+  @Input()
   incomeData: Object[];
   @Input()
   editExpence;
+  @Input()
   expencesData: Object[];
-
-  ngOnInit() {
-    this.getIncomeData();
-    this.getExpencesData();
-  }
-
-  getIncomeData() {
-    this.httpService.getIncomeData().subscribe(data => {
-      this.incomeData = data;
-    }, error => {
-      console.log(error);
-    });
-  }
-
-  getExpencesData() {
-    this.httpService.getExpenceData().subscribe(data => {
-      this.expencesData = data;
-    }, error => {
-      console.log(error);
-    });
-  }
-
 }

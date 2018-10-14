@@ -27,4 +27,10 @@ export class HttpService {
   getExpenceData(): Observable<any> {
     return this.http.get(this.urlService.getFixtures('EXPENCES_DATA'));
   }
+
+  // get client details
+  // @param {client id}
+  getClientData(clientData): Observable<any> {
+    return this.http.get(this.urlService.getFixtures('CLIENT_DETAILS'));
+  }
 }

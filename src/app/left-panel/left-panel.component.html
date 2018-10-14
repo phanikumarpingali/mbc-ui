@@ -1,3 +1,3 @@
 <ul class="mbc-ui-left-panel list-group">
-  <li class="list-group-item" *ngFor="let clientList of clientLists">{{clientList.clientName}}</li>
+  <li class="list-group-item" (click)="getClientDetails(clientList);" *ngFor="let clientList of clientLists">{{clientList.clientName}}</li>
 </ul>

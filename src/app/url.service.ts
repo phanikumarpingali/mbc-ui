@@ -15,7 +15,8 @@ export class UrlService {
   FIXTURE_URL: Object = {
     'CLIENT_LIST': '/CLIENT_LIST.json',
     'INCOME_DATA': '/INCOME_DATA.json',
-    'EXPENCES_DATA': '/EXPENCES_DATA.json'
+    'EXPENCES_DATA': '/EXPENCES_DATA.json',
+    'CLIENT_DETAILS': '/CLIENT_DETAILS.json'
   };
 
   getFixtures = (_url: string) => {

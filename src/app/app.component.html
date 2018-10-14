@@ -2,8 +2,8 @@
 <mat-sidenav-container class="mbc-container" (backdropClick)="close('backdrop')">
   <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
     <i class="fa fa-angle-double-left arrow" (click)="close('toggle button')" aria-hidden="true"></i>
-    <button type="button" class="btn btn-light float-right">+Add Client</button>
-    <app-left-panel> </app-left-panel>
+    <button type="button" (click)="openDialog()" class="btn btn-light float-right">+Add Client</button>
+    <app-left-panel (setClientData)="setClientDetails($event)"> </app-left-panel>
   </mat-sidenav>
   <mat-sidenav-content>
     <i class="fa fa-angle-double-right fa-5 arrow" (click)="sidenav.open()" aria-hidden="true"></i>
@@ -19,7 +19,7 @@
       <button type="button" class="btn btn-light font-weight-bold text-secondary" (click)="isEditIncome = !isEditIncome">Edit Income</button>
       <button type="button" class="btn btn-light font-weight-bold text-secondary" (click)="isEditExpence = !isEditExpence">Edit Expenses</button>
     </span>
-    <app-right-panel [editIncome]="isEditIncome" [editExpence]="isEditExpence">
+    <app-right-panel [editIncome]="isEditIncome" [incomeData]="incomeData" [editExpence]="isEditExpence" [expencesData]="expencesData">
     </app-right-panel>
   </mat-sidenav-content>
 </mat-sidenav-container>
