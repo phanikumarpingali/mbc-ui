@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { AddClientDialogComponent } from './add-client-dialog.component';
+import { ExpencesDialogComponent } from './expences-dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { LeftPanelComponent } from './left-panel/left-panel.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
@@ -28,10 +29,12 @@ import { FormComponent } from './form/form.component';
     RightPanelComponent,
     TableComponent,
     FormComponent,
-    AddClientDialogComponent
+    AddClientDialogComponent,
+    ExpencesDialogComponent
   ],
   entryComponents: [
-    AddClientDialogComponent
+    AddClientDialogComponent,
+    ExpencesDialogComponent
   ],
   imports: [
     BrowserModule,

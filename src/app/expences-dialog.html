@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <div class="col">
+    <button type="button" class="btn btn-light font-weight-bold text-secondary" 
+      (click)="editExpence = !editExpence">Edit Expenses</button>
+    <app-table *ngIf="!editExpence" [type]="'Income'" [data]="expencesData"></app-table>
+    <app-form *ngIf="editExpence" [type]="'Income'" [data]="expencesData"></app-form>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Close</button>
+</div>

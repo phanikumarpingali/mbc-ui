@@ -12,17 +12,22 @@ export class LeftPanelComponent implements OnInit {
 
   constructor(private httpService: HttpService) { }
   clientLists: Object[];
-  clientDataDetails: Object;
+
   @Output()
   setClientData: EventEmitter<Object> = new EventEmitter<Object>();
 
   ngOnInit() {
     this.getClientList();
+    this.httpService.CLIENT_LIST.subscribe(data => {
+      this.clientLists.push(data);
+      console.log(data);
+    });
   }
 
   getClientList() {
     this.httpService.getClientList().subscribe((data) => {
       this.clientLists = data;
+      this.getClientDetails(this.clientLists[0]);
     }, error => {
       console.log(error);
     });
@@ -30,8 +35,7 @@ export class LeftPanelComponent implements OnInit {
 
   getClientDetails(clientData) {
     this.httpService.getClientData(clientData).subscribe((data) => {
-      this.clientDataDetails = data;
-      this.setClientData.emit(this.clientDataDetails);
+      this.setClientData.emit(data);
     }, error => {
       console.log(error);
     });

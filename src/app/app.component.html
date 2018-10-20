@@ -5,21 +5,20 @@
     <button type="button" (click)="openDialog()" class="btn btn-light float-right">+Add Client</button>
     <app-left-panel (setClientData)="setClientDetails($event)"> </app-left-panel>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content  *ngIf="clientData">
     <i class="fa fa-angle-double-right fa-5 arrow" (click)="sidenav.open()" aria-hidden="true"></i>
     <span class="mr-4">
-      <strong class="text-secondary">Client :</strong> Client 1 </span>
+      <strong class="text-secondary">Client :</strong> {{clientData.clientName}} </span>
     <span class="mr-4">
-      <strong class="text-secondary">Income :</strong> Rs. 10,000,000 </span>
+      <strong class="text-secondary">Income :</strong> Rs. {{clientData.totalIncome}} </span>
     <span class="mr-4">
-      <strong class="text-secondary">Expences :</strong> Rs. 8,000,000 </span>
+      <strong class="text-secondary">Expences :</strong> Rs. {{clientData.totalExpenses}} </span>
     <span class="mr-4">
-      <strong class="text-secondary">Balance :</strong> Rs. 2,00,000</span>
+      <strong class="text-secondary">Balance :</strong> Rs. {{clientData.totalIncome}}</span>
     <span class="float-right">
       <button type="button" class="btn btn-light font-weight-bold text-secondary" (click)="isEditIncome = !isEditIncome">Edit Income</button>
-      <button type="button" class="btn btn-light font-weight-bold text-secondary" (click)="isEditExpence = !isEditExpence">Edit Expenses</button>
     </span>
-    <app-right-panel [editIncome]="isEditIncome" [incomeData]="incomeData" [editExpence]="isEditExpence" [expencesData]="expencesData">
+    <app-right-panel [editIncome]="isEditIncome" [incomeData]="clientData.income" [editExpence]="isEditExpence" [expencesData]="clientData.groupedPayments">
     </app-right-panel>
   </mat-sidenav-content>
 </mat-sidenav-container>

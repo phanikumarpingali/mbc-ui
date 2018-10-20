@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   fixturePath: '/assets/fixtures',
-  server: '',
-  port: ''
+  server: 'http://localhost',
+  port: ':8080'
 };
 
 /*

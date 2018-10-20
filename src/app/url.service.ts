@@ -8,8 +8,10 @@ import { environment } from '../environments/environment';
 })
 export class UrlService {
   constructor() { }
+
   URL: Object = {
-    'CLIENT_LIST': ''
+    'CLIENT_LIST': '/client/list',
+    'CLIENT_DETAILS_BY_ID': '/client/'
   };
 
   FIXTURE_URL: Object = {
