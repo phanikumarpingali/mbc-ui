@@ -35,4 +35,16 @@ export class HttpService {
   getClientData(clientData): Observable<any> {
     return this.http.get(this.urlService.getServiceUrl('CLIENT_DETAILS_BY_ID') + clientData['clientId']);
   }
+
+  // add income
+  // @param {client id}
+  addUpdateIncome(clientId,requestData) : Observable<any>{
+    return this.http.post(this.urlService.getServiceUrl('ADD_UPDATE_INCOME')+clientId,requestData)
+  }
+
+  // delete income
+  // @param {client id}
+  deleteIncome(clientId,requestData) : Observable<any>{
+    return this.http.post(this.urlService.getServiceUrl('DELETE_INCOME')+clientId,requestData);
+  }
 }

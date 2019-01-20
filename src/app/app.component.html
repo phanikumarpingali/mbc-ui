@@ -18,7 +18,7 @@
     <span class="float-right">
       <button type="button" class="btn btn-light font-weight-bold text-secondary" (click)="isEditIncome = !isEditIncome">Edit Income</button>
     </span>
-    <app-right-panel [editIncome]="isEditIncome" [incomeData]="clientData.income" [editExpence]="isEditExpence" [expencesData]="clientData.groupedPayments">
+    <app-right-panel [editIncome]="isEditIncome" [editExpence]="isEditExpence" [clientData]="clientData">
     </app-right-panel>
   </mat-sidenav-content>
 </mat-sidenav-container>

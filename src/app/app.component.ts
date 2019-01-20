@@ -36,43 +36,5 @@ export class AppComponent implements OnInit {
   }
   setClientDetails(clientData) {
     this.clientData = clientData;
-    this.clientData['income'] = [
-      {
-        'id': 1,
-        'transactionType': 'Bank Transfer',
-        'transactionId': '001003',
-        'transactionDate': '9/1/2018',
-        'amount': 'Rs. 2,00,000'
-      },
-      {
-        'id': 2,
-        'transactionType': 'Cheque deposit',
-        'transactionId': '1110222012112',
-        'transactionDate': '2/1/2018',
-        'amount': 'Rs. 2,00,000'
-      },
-      {
-        'id': 3,
-        'transactionType': 'Cash deposit',
-        'transactionId': '990111090',
-        'transactionDate': '4/1/2018',
-        'amount': 'Rs. 2,00,000'
-      },
-      {
-        'id': 4,
-        'transactionType': 'Bank Transfer',
-        'transactionId': '001004',
-        'transactionDate': '19/1/2018',
-        'amount': 'Rs. 2,00,000'
-      },
-      {
-        'id': 5,
-        'transactionType': 'Bank Transfer',
-        'transactionId': '001005',
-        'transactionDate': '18/1/2018',
-        'amount': 'Rs. 2,00,000'
-      }
-    ];
-    this.clientData['groupedPayments'] = { 'Expence 1': '100000', 'Expence 2': '200000', 'Expence 3': '300000' };
   }
 }

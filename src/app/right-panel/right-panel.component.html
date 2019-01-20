@@ -1,10 +1,10 @@
 <div class="row m-2 border border-muted">
   <div class="col">
-    <app-table *ngIf="!editIncome" [type]="'Income'" [data]="incomeData"></app-table>
-    <app-form *ngIf="editIncome" [type]="'Income'" [data]="incomeData"></app-form>
+    <app-table *ngIf="!editIncome" [type]="'Income'" [clientId] = "clientData.clientId"  [data]="clientData.income"></app-table>
+    <app-form *ngIf="editIncome" [type]="'Income'" [clientId] = "clientData.clientId" [data]="clientData.income"></app-form>
   </div>
   <div class="col">
-    <app-table *ngIf="!editExpence" [type]="'Expence'" [data]="expencesData"></app-table>
-    <app-form *ngIf="editExpence" [type]="'Expence'" [data]="expencesData"></app-form>
+    <app-table *ngIf="!editExpence" [type]="'Expence'" [clientId] = "clientData.clientId" [data]="clientData.groupedPayments"></app-table>
+    <app-form *ngIf="editExpence" [type]="'Expence'" [clientId] = "clientData.clientId" [data]="clientData.groupedPayments"></app-form>
   </div>
 </div>

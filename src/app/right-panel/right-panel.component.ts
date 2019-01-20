@@ -13,9 +13,7 @@ export class RightPanelComponent {
   @Input()
   editIncome;
   @Input()
-  incomeData: Object[];
-  @Input()
   editExpence;
   @Input()
-  expencesData: Object[];
+  clientData: Object[];
 }

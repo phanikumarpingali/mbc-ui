@@ -15,6 +15,8 @@ export class TableComponent implements OnInit, OnChanges {
   type;
   @Input()
   data;
+  @Input()
+  clientId;
 
   private groupedData = [];
 
