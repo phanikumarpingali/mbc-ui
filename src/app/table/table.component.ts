@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ExpencesDialogComponent } from '../expences-dialog.component';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-table',
@@ -9,7 +10,7 @@ import { ExpencesDialogComponent } from '../expences-dialog.component';
 })
 export class TableComponent implements OnInit, OnChanges {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private httpService: HttpService) { }
 
   @Input()
   type;
@@ -24,49 +25,19 @@ export class TableComponent implements OnInit, OnChanges {
   }
 
   getDetiailGroupByResults(groupedData) {
-    const dialogRef = this.dialog.open(ExpencesDialogComponent, {
-      width: '100%',
-      data: [
-        {
-          'id': 1,
-          'transactionType': 'Bank Transfer',
-          'transactionId': '001003',
-          'transactionDate': '9/1/2018',
-          'amount': 'Rs. 2,00,000'
-        },
-        {
-          'id': 2,
-          'transactionType': 'Purchase of Cement',
-          'transactionId': '1110222012112',
-          'transactionDate': '2/1/2018',
-          'amount': 'Rs. 2,00,000'
-        },
-        {
-          'id': 3,
-          'transactionType': 'labor charges',
-          'transactionId': '990111090',
-          'transactionDate': '4/1/2018',
-          'amount': 'Rs. 1,00,000'
-        },
-        {
-          'id': 4,
-          'transactionType': 'Purchase of Steel',
-          'transactionId': '001004',
-          'transactionDate': '19/1/2018',
-          'amount': 'Rs. 1,00,000'
-        },
-        {
-          'id': 5,
-          'transactionType': 'Purchase of Bricks',
-          'transactionId': '001005',
-          'transactionDate': '18/1/2018',
-          'amount': 'Rs. 2,00,000'
-        }
-      ]
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog Closed ' + result);
-    });
+    this.httpService.getExpenceDetailsByClientIdAndVendorName(this.clientId, groupedData.expence).subscribe(data => {
+      const dialogRef = this.dialog.open(ExpencesDialogComponent, {
+        width: '100%',
+        data: data
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog Closed ' + result);
+      });
+    }, error => {
+      console.log(error);
+    })
+
+    
   }
 
   ngOnChanges(changes: SimpleChanges): void {

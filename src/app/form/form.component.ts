@@ -17,9 +17,7 @@ export class FormComponent implements OnInit, OnChanges {
   @Input()
   clientId;
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data) {
@@ -58,15 +56,40 @@ export class FormComponent implements OnInit, OnChanges {
         console.log(error);
       })
     }
+
+    if (this.type === 'Detail Expence Data') {
+      var payLoad1 = {
+        transactionType: this.data.transactionType,
+        transactionId: this.data.transactionId,
+        transactionDate: this.data.transactionDate,
+        amount: this.data.amount,
+        vendorName: this.data.vendorName
+      }
+      this.httpService.addUpdateExpence(this.clientId, payLoad1).subscribe(data => {
+        console.log("Update/Add successful");
+      }, error => {
+        console.log(error);
+      })
+    }
   }
 
   delete(data, i) {
     this.data.splice(i, 1);
-    this.httpService.deleteIncome(this.clientId, { transactionId: data.transactionId }).subscribe(data => {
-      console.log(data);
-    }, error => {
-      console.log(error);
-    })
-  }
 
+    if (this.type === 'Income') {
+      this.httpService.deleteIncome(this.clientId, { transactionId: data.transactionId }).subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      })
+    }
+
+    if (this.type === 'Detail Expence Data') {
+      this.httpService.deleteExpence(this.clientId, { transactionId: data.transactionId }).subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log(error);
+      })
+    }
+  }
 }

@@ -12,8 +12,14 @@ export class UrlService {
   URL: Object = {
     'CLIENT_LIST': '/client/list',
     'CLIENT_DETAILS_BY_ID': '/client/',
+    // 1
+    'ADD_CLIENT': '/client/save',
     'ADD_UPDATE_INCOME': '/account/addincome/',
-    'DELETE_INCOME' : '/account/delincome/'
+    'DELETE_INCOME': '/account/delincome/',
+    // 2
+    'GET_EXPENCES_LIST_BY_VENDOR_NAME': '/account/expensesbyvendor/',
+    'ADD_UPDATE_EXPENCE': '/account/addexpense/',
+    'DELETE_EXPENCE': '/account/delexpense/'
   };
 
   FIXTURE_URL: Object = {

@@ -38,13 +38,32 @@ export class HttpService {
 
   // add income
   // @param {client id}
-  addUpdateIncome(clientId,requestData) : Observable<any>{
-    return this.http.post(this.urlService.getServiceUrl('ADD_UPDATE_INCOME')+clientId,requestData)
+  addUpdateIncome(clientId, requestData): Observable<any> {
+    return this.http.post(this.urlService.getServiceUrl('ADD_UPDATE_INCOME') + clientId, requestData)
   }
 
   // delete income
   // @param {client id}
-  deleteIncome(clientId,requestData) : Observable<any>{
-    return this.http.post(this.urlService.getServiceUrl('DELETE_INCOME')+clientId,requestData);
+  deleteIncome(clientId, requestData): Observable<any> {
+    return this.http.post(this.urlService.getServiceUrl('DELETE_INCOME') + clientId, requestData);
   }
+
+  // get expence details by vendor name
+  // @param {client id, vendor name}
+  getExpenceDetailsByClientIdAndVendorName(clientId, vendorName): Observable<any> {
+    return this.http.get(this.urlService.getServiceUrl('GET_EXPENCES_LIST_BY_VENDOR_NAME') + clientId + '/' + vendorName);
+  }
+
+  // add Expence
+  // @param {client Id}
+  addUpdateExpence(clientId, requestData): Observable<any> {
+    return this.http.post(this.urlService.getServiceUrl('ADD_UPDATE_EXPENCE') + clientId, requestData)
+  }
+
+  // delete expence
+  // @param {client id}
+  deleteExpence(clientId, requestData): Observable<any> {
+    return this.http.post(this.urlService.getServiceUrl('DELETE_EXPENCE') + clientId, requestData);
+  }
+
 }
