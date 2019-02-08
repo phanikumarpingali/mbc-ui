@@ -17,6 +17,17 @@ export class AddClientDialogComponent {
     }
 
     submitClientDetails(clientData) {
+        this.httpService.addClient(clientData).subscribe(data => {
+            if (data.status === 'success') {
+                alert("Client Added Successfully");
+                console.log("Client Added Successfully");
+            } else {
+                alert(data.errorMessage);
+            }
+        }, error => {
+            alert("Error in adding client");
+            console.log(error);
+        })
         this.httpService.CLIENT_LIST.next(clientData);
         this.dialogRef.close();
     }

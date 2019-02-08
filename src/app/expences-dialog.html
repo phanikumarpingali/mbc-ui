@@ -2,8 +2,8 @@
   <div class="col">
     <button type="button" class="btn btn-light font-weight-bold text-secondary" 
       (click)="editExpence = !editExpence">Edit Expenses</button>
-    <app-table *ngIf="!editExpence" [type]="'Detail Expence'" [data]="expencesData"></app-table>
-    <app-form *ngIf="editExpence" [type]="'Detail Expence'" [data]="expencesData"></app-form>
+    <app-table *ngIf="!editExpence" [clientId]="clientId" [type]="'Detail Expence'" [data]="expencesData"></app-table>
+    <app-form *ngIf="editExpence" [clientId]="clientId" [type]="'Detail Expence'" [data]="expencesData"></app-form>
   </div>
 </div>
 <div mat-dialog-actions>

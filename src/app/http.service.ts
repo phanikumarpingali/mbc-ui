@@ -66,4 +66,10 @@ export class HttpService {
     return this.http.post(this.urlService.getServiceUrl('DELETE_EXPENCE') + clientId, requestData);
   }
 
+  // Add Client
+  // @param {client name, client description}
+  addClient(requestData): Observable<any> {
+    return this.http.post(this.urlService.getServiceUrl('ADD_CLIENT') , requestData);
+  }
+
 }

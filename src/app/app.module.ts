@@ -8,6 +8,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 import { AddClientDialogComponent } from './add-client-dialog.component';
@@ -46,6 +49,8 @@ import { FormComponent } from './form/form.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     NgbModule,
     HttpClientModule
   ],

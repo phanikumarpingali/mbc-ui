@@ -8,12 +8,14 @@ import { DialogData } from './dialog-data.interface';
 })
 export class ExpencesDialogComponent {
     private expencesData;
+    private clientId;
     private editExpence = false;
 
     constructor(
         public dialogRef: MatDialogRef<ExpencesDialogComponent>,
         @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-        this.expencesData = data;
+        this.expencesData = data['tableData'];
+        this.clientId = data['clientId'];
     }
 
     onNoClick(): void {

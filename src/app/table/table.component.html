@@ -3,7 +3,7 @@
 <table *ngIf="type === 'Income'" class="table table-sm table-bordered table-striped">
   <thead>
     <tr>
-      <th scope="col">Transaction Id</th>
+      <th scope="col">Reference</th>
       <th scope="col">Transaction Type</th>
       <th scope="col">Date Recieved</th>
       <th scope="col">Amount</th>
@@ -11,9 +11,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let _data of data">
-      <td scope="row">{{_data.transactionId}}</td>
+      <td scope="row">{{_data.referenceNo}}</td>
       <td>{{_data.transactionType}}</td>
-      <td>{{_data.transactionDate}}</td>
+      <td>{{getDateFormat(_data.transactionDate)}}</td>
       <td>{{_data.amount}}</td>
     </tr>
   </tbody>
@@ -22,7 +22,7 @@
 <table *ngIf="type === 'Detail Expence'" class="table table-sm table-bordered table-striped">
   <thead>
     <tr>
-      <th scope="col">Transaction Id</th>
+      <th scope="col">Reference</th>
       <th scope="col">Transaction Type</th>
       <th scope="col">Date Recieved</th>
       <th scope="col">Amount</th>
@@ -30,9 +30,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let _data of data">
-      <td scope="row">{{_data.transactionId}}</td>
+      <td scope="row">{{_data.referenceNo}}</td>
       <td>{{_data.transactionType}}</td>
-      <td>{{_data.transactionDate}}</td>
+      <td>{{getDateFormat(_data.transactionDate)}}</td>
       <td>{{_data.amount}}</td>
     </tr>
   </tbody>

@@ -20,14 +20,17 @@ export class LeftPanelComponent implements OnInit {
     this.getClientList();
     this.httpService.CLIENT_LIST.subscribe(data => {
       this.clientLists.push(data);
-      console.log(data);
     });
   }
 
   getClientList() {
     this.httpService.getClientList().subscribe((data) => {
-      this.clientLists = data;
-      this.getClientDetails(this.clientLists[0]);
+      if (data.status === 'success') {
+        this.clientLists = data.responseObject;
+        this.getClientDetails(this.clientLists[0]);
+      } else {
+        alert(data.errorMessage);
+      }
     }, error => {
       console.log(error);
     });
@@ -35,7 +38,11 @@ export class LeftPanelComponent implements OnInit {
 
   getClientDetails(clientData) {
     this.httpService.getClientData(clientData).subscribe((data) => {
-      this.setClientData.emit(data);
+      if (data.status === 'success') {
+        this.setClientData.emit(data.responseObject);
+      } else {
+        alert(data.errorMessage);
+      }
     }, error => {
       console.log(error);
     });

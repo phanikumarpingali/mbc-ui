@@ -14,21 +14,23 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="transactionId" class="col-sm-2 col-form-label">Txn Id</label>
+      <label for="referenceNo" class="col-sm-2 col-form-label">Reference</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="transactionId" [(ngModel)]="_data.transactionId" placeholder="Enter Transaction Id for reference">
+        <input type="text" class="form-control" name="referenceNo" [(ngModel)]="_data.referenceNo" placeholder="Enter Transaction Id for reference">
       </div>
     </div>
     <div class="form-group row">
       <label for="transactionDate" class="col-sm-2 col-form-label">Date</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="transactionDate" [(ngModel)]="_data.transactionDate" placeholder="Enter Transaction Date">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="_data.transactionDate"  [ngModelOptions]="{standalone: true}" placeholder="Choose Transaction date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
       </div>
     </div>
     <div class="form-group row">
       <label for="amount" class="col-sm-2 col-form-label">Amount</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" name="amount" [(ngModel)]="_data.amount" placeholder="Enter Transaction Amount">
+        <input type="number" class="form-control" name="amount" [(ngModel)]="_data.amount" placeholder="Enter Transaction Amount">
       </div>
     </div>
     <button class="btn btn-default mr-4" *ngIf="_data.transactionId !== ''" (click)="update(_data, i)">Update</button>
